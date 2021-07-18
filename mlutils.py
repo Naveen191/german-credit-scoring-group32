@@ -2,14 +2,14 @@ import pandas as pd
 import numpy as np
 import copy
 from collections import Counter
-from matplotlib import pyplot as plt
+# from matplotlib import pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
-from sklearn.linear_model import LogisticRegression
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
+# from sklearn.linear_model import LogisticRegression
+# from sklearn.neighbors import KNeighborsClassifier
+# from sklearn.svm import SVC
+# from sklearn.tree import DecisionTreeClassifier
+# from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import cross_val_score
 import seaborn as sns
@@ -18,7 +18,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_predict
 from sklearn.metrics import roc_curve
-from sklearn.metrics import roc_auc_score
+# from sklearn.metrics import roc_auc_score
 from credit_actual_data_values import substitute
 
 # define a GradientBoostingclassifier
