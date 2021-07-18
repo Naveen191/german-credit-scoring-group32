@@ -14,15 +14,15 @@ app.add_event_handler("startup", load_model)
 
 # class which is expected in the payload
 class QueryIn(BaseModel):
-    duration_in_month: int
+    duration_in_month: str
     credit_history: str
     purpose: str
-    credit_amount: float
+    credit_amount: str
     present_employment_since_in_yrs: str
-    installment_rate_in_percent_of_income: float
+    installment_rate_in_percent_of_income: str
     job: str
     housing: str
-    no_of_people_liable_to_provide_maintainence_for: int
+    no_of_people_liable_to_provide_maintainence_for: str
     foreign_worker: str
 # class which is returned in the response
 class QueryOut(BaseModel):
@@ -31,15 +31,15 @@ class QueryOut(BaseModel):
 
 # class which is expected in the payload while re-training
 class FeedbackIn(BaseModel):
-    duration_in_month: int
+    duration_in_month: str
     credit_history: str
     purpose: str
-    credit_amount: float
+    credit_amount: str
     present_employment_since_in_yrs: str
-    installment_rate_in_percent_of_income: float
+    installment_rate_in_percent_of_income: str
     job: str
     housing: str
-    no_of_people_liable_to_provide_maintainence_for: int
+    no_of_people_liable_to_provide_maintainence_for: str
     foreign_worker: str
     loan_status: str
 # Route definitions

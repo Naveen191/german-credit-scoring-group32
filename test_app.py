@@ -14,7 +14,6 @@ def test_ping():
 def test_pred_True():
     # defining a sample payload for the testcase
     payload = {
-     
         'duration_in_month': 6,
         'credit_history': 'A34',
         'purpose': 'A43',
