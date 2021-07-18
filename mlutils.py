@@ -34,7 +34,7 @@ def load_model():
     last_ix = len(df.columns) - 1
     X, y = df.drop(last_ix, axis=1), df[last_ix]
     # d = 0
-    X=X.drop(X.colmuns(i) for i in [0,5,8,9,10,11,12,13,15,18])
+    X=X.drop(X.columns(i) for i in [0,5,8,9,10,11,12,13,15,18])
 
     # Categorical features has to be converted into integer values for the model to process. 
     #This is done through one hot encoding.
