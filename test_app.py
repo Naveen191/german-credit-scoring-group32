@@ -14,14 +14,15 @@ def test_ping():
 def test_pred_True():
     # defining a sample payload for the testcase
     payload = {
+     
         'duration_in_month': 6,
         'credit_history': 'A34',
         'purpose': 'A43',
         'credit_amount': 1169,
-        'present_employment_since_in_yrs': 7,
+        'present_employment_since_in_yrs': 'A75',
         'installment_rate_in_percent_of_income': 4,
-        'job': 'A173',
-        'housing': 'A152',
+        'job': 'A153',
+        'housing': 'A173',
         'no_of_people_liable_to_provide_maintainence_for': 1,
         'foreign_worker': 'A201',
         'loan_status': 1
