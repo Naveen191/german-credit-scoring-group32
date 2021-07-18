@@ -26,7 +26,7 @@ class QueryIn(BaseModel):
     foreign_worker: str
 # class which is returned in the response
 class QueryOut(BaseModel):
-    loan_status: int
+    loan_status: str
     time_stamp: time
 
 # class which is expected in the payload while re-training
@@ -41,7 +41,7 @@ class FeedbackIn(BaseModel):
     housing: str
     no_of_people_liable_to_provide_maintainence_for: int
     foreign_worker: str
-    loan_status: int
+    loan_status: str
 # Route definitions
 @app.get("/ping")
 # Healthcheck route to ensure that the API is up and running
