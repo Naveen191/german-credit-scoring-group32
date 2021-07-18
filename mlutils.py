@@ -32,7 +32,8 @@ def load_model():
     # load the dataset from the official sklearn datasets
     df=pd.read_csv('germanCreditData_hackathon.data', sep=" ", header=None)    # do the test-train split and train the model
     last_ix = len(df.columns) - 1
-    X, y = df.drop(last_ix, axis=1), df[last_ix]
+    X, y  = df.drop([df.columns[i] for i in [0,5,8,9,10,11,12,13,15,18,last_ix]],axis = 1, inplace = True)
+    # X, y = df.drop(last_ix, axis=1), df[last_ix]
     # d = 0
     # X=X.drop(X.)
 
@@ -50,6 +51,7 @@ def load_model():
     clf.fit(X_train, y_train)
     # calculate and print the accuracy score for GaussianNB
     clf_acc = accuracy_score(y_test, clf.predict(X_test))
+    y_pred = clf.predict(X_test)
     print(f"Model GradientBoost trained with accuracy: {round(clf_acc, 3)}")
     clf_precision = precision_score(y_test,y_pred, average='micro')
     print(f"Model GradientBoost trained with precision: {round(clf_precision, 3)}")
