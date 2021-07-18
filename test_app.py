@@ -27,10 +27,10 @@ def test_pred_True():
         'loan_status': 1
     }
     with TestClient(app) as client:
-        response = client.post("/predict_flower", json=payload)
+        response = client.post("/predict", json=payload)
         # asserting the correct response is received
         assert response.status_code == 200
-        assert response.json() == {"flower_class": "Iris Virginica"}
+        assert response.json() == {"loan_status": "GoodRisk"}
 
 # def test_pred_setosa():
 #     payload = {
