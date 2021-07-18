@@ -32,7 +32,7 @@ def load_model():
     # load the dataset from the official sklearn datasets
     df=pd.read_csv('germanCreditData_hackathon.data', sep=" ", header=None)    # do the test-train split and train the model
     last_ix = len(df.columns) - 1
-    X, y = df.drop(colmuns = [0,5,8,9,10,11,12,13,15,18,last_ix], axis=1), df[last_ix]
+    X, y = df.drop(columns = [0,5,8,9,10,11,12,13,15,18,last_ix], axis=1), df[last_ix]
     # d = 0
     # X=X.drop(colmuns = [0,5,8,9,10,11,12,13,15,18])
 
