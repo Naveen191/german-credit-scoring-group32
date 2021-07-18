@@ -19,7 +19,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_predict
 from sklearn.metrics import roc_curve
 # from sklearn.metrics import roc_auc_score
-from credit_actual_data_values import substitute
+# from credit_actual_data_values import substitute
 
 # define a GradientBoostingclassifier
 clf = GradientBoostingClassifier()
@@ -30,8 +30,8 @@ r_classes = {y: x for x, y in classes.items()}
 # function to train and load the model during startup
 def load_model():
     # load the dataset from the official sklearn datasets
-    # df=pd.read_csv('germanCreditData_hackathon.data', sep=" ", header=None)    # do the test-train split and train the model
-    df=pd.read_csv('data.csv', sep=" ", header=None)    # do the test-train split and train the model
+    df=pd.read_csv('germanCreditData_hackathon.data', sep=" ", header=None)    # do the test-train split and train the model
+    # df=pd.read_csv('data.csv', sep=" ", header=None)    # do the test-train split and train the model
     # df.drop([df.columns[i] for i in [0,5,8,9,10,11,12,13,15,18]],axis = 1, inplace = True)
     last_ix = len(df.columns) - 1
     # X, y  = df.drop([df.columns[i] for i in [0,5,8,9,10,11,12,13,15,18,last_ix]],axis = 1, inplace = True)
