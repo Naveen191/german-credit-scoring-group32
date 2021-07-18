@@ -24,7 +24,7 @@ def test_pred_True():
         'housing': 'A152',
         'no_of_people_liable_to_provide_maintainence_for': 1,
         'foreign_worker': 'A201',
-        # loan_status: int
+        'loan_status': 1
     }
     with TestClient(app) as client:
         response = client.post("/predict_flower", json=payload)
