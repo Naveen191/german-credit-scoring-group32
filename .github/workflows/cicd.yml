@@ -1,36 +1,44 @@
-# This is a basic workflow to help you get started with Actions
+name: ci-cd
 
-name: CI
+# run the action on pull_requests and pushes
+on: [pull_request, push]
 
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # first job to test the application using pytest
   build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    runs-on: ubuntu-latest # choose the OS for running the action
+    # define the individual sequential steps to be run
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install dependencies
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          pip install -r requirements.txt
+      - name: Run pytest
+        run: |
+          pytest
+  
+  # second job to zip the codebase and upload it as an artifact when build succeeds 
+  # upload_zip:
+  #   runs-on: ubuntu-latest # choose the OS for running the action
+  #   needs: build
+    
+  #   # only run this action for pushes
+  #   if: ${{ github.event_name == 'push' }}
+
+  #   # define the individual sequential steps to be run
+  #   steps:
+  #     - name: Checkout the repository
+  #       uses: actions/checkout@v2
+  #     - name: Zip the code
+  #       run: |
+  #         zip -r release.zip . -x ".git/*" ".github/*" ".gitignore"
+  #     - name: Upload artifact
+  #       uses: actions/upload-artifact@v2
+  #       with:
+  #         name: code-release
+  #         path: release.zip
