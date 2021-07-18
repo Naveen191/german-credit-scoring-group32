@@ -31,7 +31,7 @@ r_classes = {y: x for x, y in classes.items()}
 def load_model():
     # load the dataset from the official sklearn datasets
     df=pd.read_csv('germanCreditData_hackathon.data', sep=" ", header=None)    # do the test-train split and train the model
-    df.drop([df.columns[i] for i in [0,5,8,9,10,11,12,13,15,18]],axis = 1, inplace = True)
+    # df.drop([df.columns[i] for i in [0,5,8,9,10,11,12,13,15,18]],axis = 1, inplace = True)
     last_ix = len(df.columns) - 1
     # X, y  = df.drop([df.columns[i] for i in [0,5,8,9,10,11,12,13,15,18,last_ix]],axis = 1, inplace = True)
     X, y = df.drop(last_ix, axis=1), df[last_ix]
