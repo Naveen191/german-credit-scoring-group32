@@ -18,7 +18,7 @@ class QueryIn(BaseModel):
     credit_history: str
     purpose: str
     credit_amount: float
-    present_employment_since_in_yrs: float
+    present_employment_since_in_yrs: str
     installment_rate_in_percent_of_income: float
     job: str
     housing: str
@@ -35,7 +35,7 @@ class FeedbackIn(BaseModel):
     credit_history: str
     purpose: str
     credit_amount: float
-    present_employment_since_in_yrs: float
+    present_employment_since_in_yrs: str
     installment_rate_in_percent_of_income: float
     job: str
     housing: str
