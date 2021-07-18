@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
-from ml_utils import load_model, predict, retrain
+from mlutils import load_model, predict, retrain
 from typing import List
 from datetime import datetime, time
 
